@@ -86,9 +86,8 @@ void runcmd(struct cmd *cmd)
                 close(p[1]);
                 close(p[0]);
                 runcmd(pcmd->left);
-                
-
             }
+
             if( fork1() == 0 ){ //read
                 close(0);
                 dup(p[0]); //duplicate places a cpy of pipe's readFD on stdin's fd
@@ -96,6 +95,7 @@ void runcmd(struct cmd *cmd)
                 close(p[1]);
                 runcmd(pcmd->right);
             } 
+
             close(p[0]); //close parent copy of fd
             close(p[1]);
   
@@ -103,6 +103,7 @@ void runcmd(struct cmd *cmd)
             wait(&r);
             break;
     }    
+
     exit(0);
 }
 
