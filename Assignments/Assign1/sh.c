@@ -127,12 +127,6 @@ int main(void)
     // Read and run input commands.
     while(getcmd(buf, sizeof(buf)) >= 0){
         
-        /*if((fd = open("console", O_RDWR)) >= 0){
-            if(fd >= 3)
-                close(fd);
-            break;
-        }
-*/
         if(buf[0] == 'c' && buf[1] == 'd' && buf[2] == ' '){
             // Clumsy but will have to do for now.
             // Chdir has no effect on the parent if run in the child.
