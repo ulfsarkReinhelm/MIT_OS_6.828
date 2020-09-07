@@ -8,15 +8,15 @@ Steps to make and install qemu and xv6 on Fedora 32:
     c. Install latest python2.7  
     
   2. QEMU  
-    a. '$ git clone http://pdos.csail.mit.edu/6.828/qemu.git -b 6.828-0.15'  
+    a. $ git clone http://pdos.csail.mit.edu/6.828/qemu.git -b 6.828-0.15  
     b. CD into the directory and run: '$ ./configure --disable-kvm [--prefix=PFX] [--target-list="i386-softmmu x86_64-softmmu"]'  
       i. The prefix argument specifies where to install QEMU; without it QEMU will install to /usr/local by default. The target-list argument simply slims down the architectures QEMU will build support for.  
     c. '$ sudo make && sudo make install'  
     
   3. xv6  
-    a. '$ git submodule add git://github.com/mit-pdos/xv6-public.git <xv6>'  
+    a. $ git submodule add git://github.com/mit-pdos/xv6-public.git <xv6>   
     b. In qga/commands-posix.c, add #include <sys/sysmacros.h>  
-    c. '$ make'  
+    c. $ make  
     d. Recent GDB versions will not automatically load .gdbinit files anymore for security reasons. You have four choices to proceed (I chose option ii):  
       i. Add "add-auto-load-safe-path /absolute/path/to/.gdbinit" to your ~/.gdbinit to enable autoloading of only this file (good if you use GDB in untrusted codebases).  
       ii. You can completely disable the security check and tell GDB to load any .gdbinit file automatically by adding "set auto-load safe-path /" to your
