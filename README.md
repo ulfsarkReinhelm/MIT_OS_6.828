@@ -26,15 +26,13 @@ Steps to make and install qemu and xv6 on Fedora 32:
     
   4. How to Run It   
     a. $ make qemu   
-      i. runs with vga display; terminal echos vga display  
-    
+        i. runs with vga display; terminal echos vga display  
     b. $ make qemu-nox  
-      ii. runs output in terminal only  
-      
-    c. $ make qemu-gdb  
-      i. runs with gdb  
-      ii. to make it work, run (c) in one terminal and then run '$ gdb' in another terminal in the same directory  
-      iii. Initially, the vga display will not have a connection. This is fine. If you run 'si' repeatedly or 'c' in the second terminal where you have gdb running you will eventually load the kernel (which subsequently sets up the vga display). Really cool stuff.  
+        ii. runs output in terminal only  
+    c. $ make qemu-gdb    
+        i. runs with gdb   
+        ii. to make it work, run (c) in one terminal and then run '$ gdb' in another terminal in the same directory  
+        iii. Initially, the vga display will not have a connection. This is fine. If you run 'si' repeatedly or 'c' in the second terminal where you have gdb running you will eventually load the kernel (which subsequently sets up the vga display). Really cool stuff.  
         
   Final Notes:  
     I believe these are the steps of how I got it working (it took a bit of time for me and so I do not remember the exact ordering of steps, but I think this list is a faithful representation of everything you need to do on Fedora 32). Feel free to contact me if something doesn't work.    
